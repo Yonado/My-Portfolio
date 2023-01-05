@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.main-layout {
+  @apply bg-white w-[90%] container mx-auto h-[1500px] mt-10 rounded-lg drop-shadow-2xl;
+}
+
 html,
 body {
   width: 100%;
