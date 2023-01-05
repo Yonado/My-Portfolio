@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .main-layout {
-  @apply bg-white w-[90%] container mx-auto h-[1500px] mt-10 rounded-lg drop-shadow-2xl;
+  @apply bg-white w-full md:container mx-auto md:mx-auto h-[1500px] p-2 md:m-0 md:mt-16 md:w-[84%] rounded-lg drop-shadow-2xl;
 }
 
 html,
