@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.main-layout {
-  @apply bg-white w-full md:container mx-auto md:mx-auto h-[1500px] p-2 md:m-0 md:mt-16 md:w-[84%] rounded-lg drop-shadow-2xl;
-}
-
 html,
 body {
   width: 100%;
@@ -13,6 +9,11 @@ body {
   margin: 0px;
   padding: 0px;
   overflow-x: hidden;
+  font-family: "Roboto";
+}
+
+.main-layout {
+  @apply bg-white w-full md:container mx-auto md:mx-auto p-6 md:m-0 md:mt-16 md:w-[84%] rounded-lg drop-shadow-2xl;
 }
 
 body {

@@ -97,7 +97,9 @@ const Navbar = () => {
         <div className="hidden md:flex text-lg text-gray-600 w-full flex-1 pr-6">
           <div className="p-2 md:p-8 flex justify-between gap-10 flex-1">
             <div className="logo">
-              <h4>Yonatan Doanis</h4>
+              <Link href="/">
+                <h4>Yonatan Doanis</h4>
+              </Link>
             </div>
             <div className="flex flex-row justify-between flex-1  items-center">
               <div className="gap-4 flex text-sm">
@@ -105,7 +107,7 @@ const Navbar = () => {
                 <button>DM</button>
               </div>
               <div className="links gap-4 flex text-sm ">
-                <Link className="flex items-center gap-2" href="/">
+                <Link className="flex items-center gap-2" href="/works">
                   <span className="w-4 h-4">{worksIcon}</span>
                   <h4>Works</h4>
                 </Link>

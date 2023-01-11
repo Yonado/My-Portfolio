@@ -1,5 +1,11 @@
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
@@ -16,7 +22,12 @@ export default function RootLayout({
       <body>
         <div className="main-layout">
           <Navbar />
-          {children}
+          <div className="flex">
+            <div className="w-32 md:block hidden">
+              <Sidebar />
+            </div>
+            <div className="flex-1">{children}</div>
+          </div>
         </div>
       </body>
     </html>
