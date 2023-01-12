@@ -13,11 +13,7 @@ body {
 }
 
 .main-layout {
-  @apply bg-white w-full md:container mx-auto md:mx-auto p-6 md:m-0 md:mt-16 md:w-[84%] rounded-lg drop-shadow-2xl;
-}
-
-body {
-  background-color: #f2f0ee;
+  @apply w-full md:container mx-auto md:mx-auto p-6 md:m-0 md:mt-16 md:w-[84%] rounded-lg drop-shadow-2xl;
 }
 
 @media (prefers-color-scheme: dark) {
