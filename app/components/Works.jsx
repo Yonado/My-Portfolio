@@ -14,8 +14,8 @@ const showInfo = {
 const Works = () => {
   return (
     <div>
-      <h6 className="mt-20 mb-4 font-bold text-2xl text-[#58595B]">My Works</h6>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-600 p-4 rounded-lg">
+      <h6 className="mt-20 mb-4 font-bold text-2xl text-theme">My Works</h6>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-theme p-4 rounded-lg">
         <div className="col-1 grid grid-rows-3 gap-4">
           <Link href="/">
             <motion.div

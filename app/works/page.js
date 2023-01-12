@@ -22,7 +22,7 @@ const Works = () => {
         animate={{ opacity: 1, x: 0, transition: "easeInOut", duration: 30 }}
         exit={{ opacity: 0, x: -20 }}
       >
-        <h6 className=" mb-8 font-bold text-2xl text-[#58595B]">My Works</h6>
+        <h6 className=" mb-8 font-bold text-2xl text-theme">My Works</h6>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 bg-gray-600 p-4 rounded-lg">
           <div className="col-1 grid grid-rows-3 gap-4">
             <Link href="/">

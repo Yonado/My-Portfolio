@@ -2,7 +2,67 @@
 
 import Link from "next/link";
 import React, { useState, useEffect, useRef } from "react";
+import { useThemeSwitcher } from "react-css-theme-switcher";
 
+const lightMode = (
+  <svg viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      {" "}
+      <g
+        clip-path="url(#a)"
+        stroke="#000000"
+        stroke-width="1.5"
+        stroke-miterlimit="10"
+      >
+        {" "}
+        <path
+          d="M5 12H1M23 12h-4M7.05 7.05 4.222 4.222M19.778 19.778 16.95 16.95M7.05 16.95l-2.828 2.828M19.778 4.222 16.95 7.05"
+          stroke-linecap="round"
+        ></path>{" "}
+        <path
+          d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z"
+          fill="#000000"
+          fill-opacity=".16"
+        ></path>{" "}
+        <path d="M12 19v4M12 1v4" stroke-linecap="round"></path>{" "}
+      </g>{" "}
+      <defs>
+        {" "}
+        <clipPath id="a">
+          {" "}
+          <path fill="#ffffff" d="M0 0h24v24H0z"></path>{" "}
+        </clipPath>{" "}
+      </defs>{" "}
+    </g>
+  </svg>
+);
+const darkMode = (
+  <svg
+    fill="#ffffff"
+    viewBox="0 0 35 35"
+    data-name="Layer 2"
+    id="Layer_2"
+    xmlns="http://www.w3.org/2000/svg"
+    stroke="#ffffff"
+    stroke-width="0.00035"
+  >
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g
+      id="SVGRepo_tracerCarrier"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    ></g>
+    <g id="SVGRepo_iconCarrier">
+      <path d="M18.44,34.68a18.22,18.22,0,0,1-2.94-.24,18.18,18.18,0,0,1-15-20.86A18.06,18.06,0,0,1,9.59.63,2.42,2.42,0,0,1,12.2.79a2.39,2.39,0,0,1,1,2.41L11.9,3.1l1.23.22A15.66,15.66,0,0,0,23.34,21h0a15.82,15.82,0,0,0,8.47.53A2.44,2.44,0,0,1,34.47,25,18.18,18.18,0,0,1,18.44,34.68ZM10.67,2.89a15.67,15.67,0,0,0-5,22.77A15.66,15.66,0,0,0,32.18,24a18.49,18.49,0,0,1-9.65-.64A18.18,18.18,0,0,1,10.67,2.89Z"></path>
+    </g>
+  </svg>
+);
 const worksIcon = (
   <svg
     viewBox="0 0 32 32"
@@ -81,6 +141,16 @@ const hamMenu = (
 );
 
 const Navbar = () => {
+  const { switcher, themes, currentTheme, status } = useThemeSwitcher();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((previous) => {
+      switcher({ theme: previous ? themes.light : themes.dark });
+      return !previous;
+    });
+  };
+
   const [toggleMenu, setToggleMenu] = useState(false);
 
   const ref = useRef();
@@ -94,7 +164,7 @@ const Navbar = () => {
             : ""
         }`}
       >
-        <div className="hidden md:flex text-lg text-gray-600 w-full flex-1 pr-6">
+        <div className="hidden md:flex text-lg text-theme w-full flex-1 pr-6">
           <div className="p-2 md:p-8 flex justify-between gap-10 flex-1">
             <div className="logo">
               <Link href="/">
@@ -104,7 +174,9 @@ const Navbar = () => {
             <div className="flex flex-row justify-between flex-1  items-center">
               <div className="gap-4 flex text-sm">
                 <Link href="/">yonatan.doanis@gmail.com</Link>
-                <button>DM</button>
+                <button className="w-4 h-4" onClick={toggleDarkMode}>
+                  {currentTheme === "light" ? lightMode : darkMode}
+                </button>
               </div>
               <div className="links gap-4 flex text-sm ">
                 <Link className="flex items-center gap-2" href="/works">
@@ -121,12 +193,17 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="mobile-nav flex justify-between p-2 md:hidden items-center">
+      <div className="mobile-nav text-theme flex justify-between p-2 md:hidden items-center">
         <div className="mobile-logo flex-col">
-          <h4>Yonatan Doanis</h4>
+          <Link href="/">
+            <h4>Yonatan Doanis</h4>
+          </Link>
         </div>
-        <div className="mobile-darkmode">
-          <div>Dark Mode</div>
+        <div
+          className="mobile-darkmode w-6 h-6 cursor-pointer"
+          onClick={toggleDarkMode}
+        >
+          {currentTheme === "light" ? lightMode : darkMode}
         </div>
         <div className="mobile-menu">
           <div
@@ -144,23 +221,31 @@ const Navbar = () => {
         className={`open-mobile-menu ease-in-out duration-300
         ${
           toggleMenu
-            ? "translate-x-0 fixed top-0 right-0 left-0 h-full w-[66vw] bg-[#F2F0EE] z-20 drop-shadow-2xl"
+            ? "translate-x-0 fixed top-0 right-0 left-0 h-full w-[66vw] bg-theme text-theme z-20 drop-shadow-2xl"
             : "-translate-x-full opacity-0 top-0 right-0 left-0 h-full w-[70vw] "
         }`}
       >
         <div
           className={`${
             toggleMenu
-              ? "flex flex-col justify-between sticky top-0 w-full h-screen gap-0 pt-14 p-6 text-gray-600"
+              ? "flex flex-col justify-between sticky top-0 w-full h-screen gap-0 pt-14 p-6 text-theme"
               : "hidden"
           }`}
         >
           <div className="flex flex-col gap-4 ">
-            <Link className="flex items-center gap-4" href="/">
+            <Link
+              className="flex items-center gap-4"
+              href="/works"
+              onClick={() => setToggleMenu(false)}
+            >
               <span className="w-6 h-6">{worksIcon}</span>
               <h4>Works</h4>
             </Link>
-            <Link className="flex items-center gap-4" href="/">
+            <Link
+              className="flex items-center gap-4"
+              href="/"
+              onClick={() => setToggleMenu(false)}
+            >
               <span className="w-6 h-6">{resumeIcon}</span>
               <h4>Resume</h4>
             </Link>

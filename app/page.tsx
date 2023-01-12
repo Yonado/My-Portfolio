@@ -53,7 +53,7 @@ export default function Home() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="main-info text-center flex flex-col gap-2 container  pt-20 text-[#58595B]"
+          className="main-info text-center flex flex-col gap-2 container  pt-20 text-theme"
         >
           <motion.div className="font-bold text-5xl text-center flex flex-col items-center">
             <motion.div variants={child} className="text-center">
@@ -92,10 +92,10 @@ export default function Home() {
       </div>
       <div>
         <div className="what-i-do headings flex flex-col mt-32 justify-center">
-          <h6 className="text-[#58595B] text-4xl font-bold">What I do</h6>
-          <div className="bg-[#F2F0EE] what-i-do container  rounded-lg mt-10">
+          <h6 className="text-theme text-4xl font-bold">What I do</h6>
+          <div className="bg-body what-i-do container  rounded-lg mt-10">
             <div className="grid grid-cols-1 md:grid-cols-2 p-8">
-              <div className="text flex flex-col text-[#58595B] gap-8 ">
+              <div className="text flex flex-col text-theme gap-8 ">
                 <div className="flex flex-col gap-2">
                   <h6 className="text-center text-lg font-bold tracking-tight">
                     FRONTEND
@@ -140,13 +140,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="about-me mt-32  bg-[#f2f0ee] md:max-w-[90%] mx-auto rounded-lg p-5 text-[#58595B]">
+      <div className="about-me mt-32  bg-body md:max-w-[90%] mx-auto rounded-lg p-5 text-theme">
         <h4 className="tracking-[0.6em] text-sm font-bold  text-center m-5">
           YONATAN DOANIS
         </h4>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="left flex flex-col items-center">
-            <div className="bg-white rounded-lg p-4">
+            <div className="bg-theme rounded-lg p-4">
               <Image
                 width={280}
                 height={280}
@@ -155,11 +155,11 @@ export default function Home() {
               ></Image>
             </div>
             <div className="evolution justify-center flex flex-col mt-12">
-              <h6 className="text-center tracking-widest text-[#58595B] text-xl font-bold">
+              <h6 className="text-center tracking-widest text-theme text-xl font-bold">
                 EVOLUTION
               </h6>
               <div className="flex flex-col md:flex-row gap-4 items-center mt-6 ">
-                <div className="image bg-[#bcbbb9] rounded-full p-5 border-4 border-white cursor-pointer">
+                <div className="image bg-theme rounded-full p-5 border-4 border-white cursor-pointer">
                   <Image
                     width={100}
                     height={100}
@@ -168,7 +168,7 @@ export default function Home() {
                   ></Image>
                 </div>
                 <div className="md:rotate-0 rotate-90">{arrowSvg}</div>
-                <div className="image bg-[#bcbbb9] rounded-full p-5 border-4 border-white cursor-pointer">
+                <div className="image bg-theme rounded-full p-5 border-4 border-white cursor-pointer">
                   <Image
                     width={100}
                     height={100}
@@ -177,7 +177,7 @@ export default function Home() {
                   ></Image>
                 </div>
                 <div className="md:rotate-0 rotate-90">{arrowSvg}</div>
-                <div className="image bg-[#bcbbb9] rounded-full p-5 border-4 border-white cursor-pointer">
+                <div className="image bg-theme rounded-full p-5 border-4 border-white cursor-pointer">
                   <Image
                     width={100}
                     height={100}
@@ -193,32 +193,32 @@ export default function Home() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
               ratione autem quo!
             </h6>
-            <div className="info grid grid-cols-2 gap-4 bg-[#A4A4A4] p-5 text-xl rounded mt-4 w-full">
+            <div className="info grid grid-cols-2 gap-4 bg-theme p-5 text-xl rounded mt-4 w-full">
               <div className="grid grid-rows-3 gap-4 justify-center">
-                <div className="flex flex-col gap-2">
-                  <h4 className="text-white">Height</h4>
+                <div className="flex flex-col gap-2 text-theme">
+                  <h4 className="">Height</h4>
                   <h4>1.80</h4>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-white">Height</h4>
+                  <h4 className="">Height</h4>
                   <h4>1.80</h4>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-white">Height</h4>
+                  <h4 className="">Height</h4>
                   <h4>1.80</h4>
                 </div>
               </div>
-              <div className="grid grid-rows-3 gap-4 justify-center">
+              <div className="grid grid-rows-3 gap-4 justify-center text-theme">
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-white">Height</h4>
+                  <h4 className="">Height</h4>
                   <h4>1.80</h4>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-white">Height</h4>
+                  <h4 className="">Height</h4>
                   <h4>1.80</h4>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <h4 className="text-white">Height</h4>
+                  <h4 className="">Height</h4>
                   <h4>1.80</h4>
                 </div>
               </div>
